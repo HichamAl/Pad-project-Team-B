@@ -1,0 +1,93 @@
+* {
+    background: #181818;
+}
+
+body {
+    font-family: "Poppins Medium";
+    color: white;
+    font-size: 10px;
+
+}
+
+.center {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+.box {
+    box-sizing: border-box;
+
+width: 782px;
+height: 159px;
+left: 593px;
+top: 802px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+border: 3px solid #FFFFFF;
+}
+
+.box2 {
+    cursor: pointer;
+    box-sizing: border-box;
+
+width: 434px;
+height: 120px;
+left: 767px;
+top: 1018px;
+    display: block;
+    margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+
+border: 3px solid #FFFFFF;
+}
+
+input {
+    font-size: 50px;
+    color: white;
+}
+
+input::placeholder {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+
+    color: white;
+
+}
+
+::-ms-reveal {
+  filter: invert(100%);
+}
+
+button {
+    cursor: pointer;
+    margin-left: 125px;
+    margin-top: 20px;
+    text-align: center;
+    border: none;
+    font-size: 50px;
+    color: white;
+}
+
+#accesgranted {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+    margin-top: 250px;
+}
+
+#accesdenied {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+    margin-top: 250px;
+}
+
+
