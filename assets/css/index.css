@@ -34,6 +34,8 @@ border: 3px solid #FFFFFF;
     cursor: pointer;
     box-sizing: border-box;
 
+
+
 width: 434px;
 height: 120px;
 left: 767px;
@@ -44,6 +46,35 @@ top: 1018px;
   margin-right: auto;
 
 border: 3px solid #FFFFFF;
+}
+
+.box3 {
+    cursor: pointer;
+    box-sizing: border-box;
+
+    font-family: "Poppins Medium";
+    font-size: 50px;
+    margin-left: 110px;
+    text-align: center;
+
+width: 434px;
+height: 120px;
+left: 767px;
+top: 1018px;
+    display: block;
+    margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+
+border: 3px solid #FFFFFF;
+
+    -webkit-transition: background-color 250ms linear;
+    -ms-transition: background-color 250ms linear;
+    transition: background-color 250ms linear;
+
+
+
+
 }
 
 input {
@@ -58,13 +89,15 @@ input::placeholder {
 
     color: white;
 
+
+
 }
 
 ::-ms-reveal {
   filter: invert(100%);
 }
 
-button {
+.button {
     cursor: pointer;
     margin-left: 125px;
     margin-top: 20px;
@@ -72,6 +105,7 @@ button {
     border: none;
     font-size: 50px;
     color: white;
+    text-decoration: none;
 }
 
 #accesgranted {
@@ -89,5 +123,33 @@ button {
   width: 80%;
     margin-top: 250px;
 }
+
+.loginregister {
+    cursor: pointer;
+    margin-left: 110px;
+    text-align: center;
+
+    border: none;
+    font-size: 50px;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.box3:hover {
+    color: black;
+    background-color: white;
+    text-decoration: none;
+
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+}
+
+
+
+
+
 
 

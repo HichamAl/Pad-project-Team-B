@@ -4,7 +4,7 @@ function checkPassword() {
     document.getElementById("accesgranted").src = "assets/img/accesgranted.svg";
     document.getElementById("accesgranted").style.display = "block";
       setTimeout(function() {
-      window.location.href = "homepage.html";
+      window.location.href = "enter.html";
     }, 1500);
   } else {
     document.getElementById("accesdenied").src = "assets/img/accesdenied.svg";
@@ -13,4 +13,14 @@ function checkPassword() {
       window.location.href = "index.html";
     }, 1500);
   }
+}
+
+function redirectLogin() {
+  window.location.href = "login.html";
+
+}
+
+function redirectRegister() {
+  window.location.href = "register.html";
+
 }
