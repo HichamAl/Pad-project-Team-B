@@ -14,10 +14,10 @@
             <img src="assets/img/logo.svg" class="logo">
             <ul class="nav-links">
                 <li><a href="">Home</a></li>
-                <li><a href="">Introduction</a></li>
+                <li><a href="#introduction">Introduction</a></li>
                 <li><a href="">Leaderboard</a></li>
                 <li><a href="">Credits</a></li>
-                <li class="btn">Play</li>
+                <li class="btn" onclick="redirectPlay()">Play</li>
                 <li class="btn2">Profile</li>
             </ul>
         </nav>
@@ -44,7 +44,7 @@
 
         </div>
     <div class="textbox">
-        <h1>INTRODUCTION.</h1>
+        <h1 id="introduction">INTRODUCTION.</h1>
         <p>Welcome to DedSec CTF! We are here to challenge<br> your hacking skills by setting up a Capture The<br> Flag.<br><br> We have set up 3 levels for you to complete!<br>There is a timer so you can see in how much time<br> you have completed the levels. The Top 10 of the<br> fastest times will be in the DedSec CTF Leaderboard <br>and has a pool prize of $100,000 BTC.<br> 
             <br>
             Have fun!</p>
@@ -62,7 +62,7 @@
 
 
     <br>
-    <h1 class="center">
+    <h1 class="center" id="play">
         PLAY
     </h1>
 
@@ -88,56 +88,20 @@
             <br>
             <br>
             
+        
+        
+        
+            </div>
+            <div class="box3" onclick="redirectChallenges()">
+                CHALLENGES</div>
 
-    </div>
+              
     <img src="assets/img/hoofd.gif" class="gifs">
 </div>
 <img src="assets/img/seperator.svg" class="linesvg">
 <br>
-<h1 class="center">LEVELS</h1>
 
-<div class="textbox">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="container">
-        <h1 style="color: green;">
-            Easy
-        </h1>
-        <div class="box" onclick="redirectlvl1()">
-            SQL INJECTION
-            </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
-    <div class="container">
-        <h1 style="color: orange;">Medium</h1>
-        <div class="box" onclick="redirectlvl2()">
-            AUTH
-            </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="container">
-        <h1 style="color: red;">Hard</h1>
-        <div class="box" onclick="redirectlvl3()">
-            ??????????
-            </div>
-    </div>
-
-</div>
 
         
 

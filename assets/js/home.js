@@ -1,14 +1,11 @@
-function redirectlvl1() {
-    window.location.href = "level1.html";
-  
-  }
-  
-  function redirectlvl2() {
-    window.location.href = "level2.html";
+function redirectChallenges() {
+    window.location.href = "challenges.html";
   
   }
 
-  function redirectlvl3() {
-    window.location.href = "level3.html";
-  
+  function redirectPlay() {
+    window.location.href = "#play";
   }
+  
+
+

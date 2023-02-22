@@ -101,6 +101,7 @@ EIND HEADER*/
 }
 
 .welcome {
+    display: flex;
     background: none;
     font-size: 20px;
     color: #ffffff;
@@ -119,11 +120,7 @@ h2{
     color: #ffffff;
 }
 
-p{
-    font-size: 20px;
-    color: #A1A1A1;
-    
-}
+
 
 .textbox{
     
@@ -131,6 +128,8 @@ p{
     margin-right: auto;
 
     padding-left: 10px;
+    font-size: 20px;
+    color: #A1A1A1;
     
     
 }
@@ -199,6 +198,258 @@ border: 3px solid #FFFFFF;
     -ms-transition: background-color 200ms linear;
     transition: background-color 200ms linear;
 }
+
+.mainbox {
+    display: flex;
+    margin: auto;
+    width: 1656px;
+    height: 1280px;
+    left: 130px;
+    top: 585px;
+
+    background: #1C1C1C;
+    box-shadow: 0px 0px 30px -5px #000000;
+    border-radius: 50px;
+
+    
+}
+
+.yourscore {
+    
+    width: 243px;
+height: 98px;
+left: 1463px;
+top: 220px;
+
+background: #2F2F2F;
+box-shadow: 0px 2px 15px 6px rgba(0, 0, 0, 0.25);
+border-radius: 28px;
+margin-left: 200px;
+
+
+
+
+
+}
+
+#score {
+    color: #FFFFFF;
+    font-size: 20px;
+    background: none;
+}
+
+.auto-input {
+    margin-left: 300px;
+}
+
+.auto-input2{
+    margin-left: 600px;
+    
+}
+
+.cardsrow {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    display: grid;
+    margin-right: 175px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 400px);
+    grid-auto-rows: max-content;
+    column-gap: 50px;
+    row-gap: 50px;
+    background: none;
+}
+
+.cards {
+    box-sizing: border-box;
+
+
+width: 365px;
+height: 244px;
+left: 205px;
+top: 789px;
+
+background: #181818;
+border: 2px solid #FFFFFF;
+box-shadow: 0px 0px 15px 3px #000000, inset 0px 0px 26px -10px #FFFFFF;
+border-radius: 19px;
+
+margin-left: 126px;
+margin-top: 50px;
+
+cursor: pointer;
+
+}
+
+.cardsheader {
+    margin-left: 20px;
+    margin-top: 10px;
+    display: flex;
+    color: white;
+    background: none;
+    
+    
+
+}
+
+.cardsheader img{
+    margin-left: 100px;
+    background: none;
+}
+
+.cardsheader p {
+    background: none;
+}
+
+.cardsbody {
+    
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    
+    margin-top: 50px;
+    background: none;
+}
+
+.cardsbody p {
+    background: none;
+    text-align: center;
+}
+
+.cardsbody img{
+    margin-left: 80px;
+    margin-top: 30px;
+}
+
+
+
+.amountpoints {
+    display: flex;
+    align-items: center;
+    margin-left: 300px;
+    font-size: 30px;
+}
+
+.hints {
+    margin-right: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+.hintboxes {
+    width: 60px;
+height: 60px;
+left: 1119px;
+top: 658px;
+
+background: #D9D9D9;
+
+font-size: 50px;
+text-align: center;
+margin-top: 100px;
+
+cursor: pointer;
+
+}
+
+.submitflagsection {
+    display: flex;
+    align-items: center;
+}
+
+.inputbox {
+    box-sizing: border-box;
+
+
+width: 1073px;
+height: 116px;
+left: 110px;
+top: 1044px;
+
+border: 2px solid #FFFFFF;
+border-radius: 75px;
+}
+
+input {
+    font-size: 25px;
+    color: #FFFFFF;
+    
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    margin-left: 100px;
+
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+.inputbutton {
+    width: 484px;
+height: 116px;
+left: 1258px;
+top: 1044px;
+
+background: #FFFFFF;
+border-radius: 43px;
+
+font-size: 50px;
+}
+
+.hinttext {
+    font-size: 20px;
+    color: red;
+    margin-left: 1200px;
+}
+
+.box3 {
+    color: #FFFFFF;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    font-family: "Poppins Medium";
+    font-size: 50px;
+    margin-left: 110px;
+    text-align: center;
+
+width: 434px;
+height: 120px;
+left: 767px;
+top: 1018px;
+    display: block;
+    margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+
+border: 3px solid #FFFFFF;
+
+    -webkit-transition: background-color 250ms linear;
+    -ms-transition: background-color 250ms linear;
+    transition: background-color 250ms linear;
+
+   
+
+
+
+}
+
+.box3:hover {
+    color: black;
+    background-color: white;
+    text-decoration: none;
+
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+}
+
+
+
 
 
 
