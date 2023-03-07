@@ -9,3 +9,15 @@ def profile(response):
 
 def home(response):
     return render(response, "main/home.html")
+
+def index(response):
+    return render(response, "main/index.html")
+
+def enter(response):
+    return render(response, "main/enter.html")
+
+def challenges(response):
+    return render(response, "main/challenges.html")
+
+def challenges1(response):
+    return render(response, "main/challenges-1.html")

@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inject the battie</title>
-    <link rel="stylesheet" href="assets/css/home.css">
-</head>
+
+{% extends 'main/base.html'%}
+
+{% block title %}
+Challenge 1
+{% endblock %}
+
+{% block head %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'main/assets/css/home.css' %}">
+{% endblock %}
+
+{% block content %}
 <body>
     <!--HEADER-->
  <div class="header">
     <nav>
-        <img src="assets/img/logo.svg" class="logo">
+        <img src="{% static 'main/assets/img/logo.svg'%}" class="logo">
         <ul class="nav-links">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="home.html">Introduction</a></li>
+            <li><a href="../home">Home</a></li>
+            <li><a href="../home">Introduction</a></li>
             <li><a href="">Leaderboard</a></li>
             <li><a href="">Credits</a></li>
             <li class="btn">Play</li>
@@ -33,7 +39,7 @@
     <h1><span class="auto-input2"></span></h1>
    <div class="amountpoints">
     <div>
-    <img src="assets/img/profileimg.svg" alt="">
+    <img src="{% static 'main/assets/img/profileimg.svg'%}" alt="">
 </div>
 <div>
     <p>
@@ -45,7 +51,7 @@
 
 </div>
 <div class="linesvg">
-    <img src="assets/img/seperator.svg" alt="">
+    <img src="{% static 'main/assets/img/seperator.svg'%}" alt="">
     <br>
     <br>
     <br>
@@ -148,6 +154,7 @@
 
 </div>
 
+{% load static %}
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
     var typed = new Typed(".auto-input2", {
@@ -158,3 +165,4 @@
 </script>
 </body>
 </html>
+{% endblock %}

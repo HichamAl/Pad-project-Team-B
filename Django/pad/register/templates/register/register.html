@@ -4,8 +4,12 @@
 Register page
 {% endblock %}
 
+{% block head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'register/register.css' %}"/>
+{% endblock %}
+
 {% block content %}
-{% load crispy_forms_tags %}
 <br>
 <h1>Create an account</h1>
 <br>

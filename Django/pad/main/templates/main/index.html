@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+{% extends 'main/base.html'%}
 
 <!-- ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣶⠶⠶⠶⠶⠶⠶⠶⢖⣦⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡴⠞⠛⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠻⠶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -46,16 +48,24 @@
 8 8888      88 .8'   `8. `88888.   8 8888             8 8888        8 8888 8 8888         8 8888      88 `8 8888       ,8P      8 8888   8b   `8.`8888.
 8 8888    ,88'.888888888. `88888.  8 8888             8 8888        8 8888 8 8888         8 8888    ,88'  ` 8888     ,88'       8 8888   `8b.  ;8.`8888
 8 888888888P .8'       `8. `88888. 8 8888             8 8888        8 8888 8 888888888888 8 888888888P       `8888888P'         8 8888    `Y8888P ,88P' -->
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="assets/css/index.css">
 
-</head>
+
+    {% block title %}
+    Welcome
+    {% endblock %}
+
+    {% block head %}
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'main/assets/css/index.css' %}">
+    {% endblock %}
+
+{% block content %}
 <body>
-<img src="assets/img/logo.svg" alt="" class="center">
-<img src="assets/img/dedsecjoinus.svg" class="center">
+    
+<img src="{% static 'main/assets/img/logo.svg' %}" alt="" class="center">
+    
+<img src="{% static 'main/assets/img/dedsecjoinus.svg' %}" class="center">
 <h1 class="center">
     So u taught u could get in so easily? Let’s check if you’re worthy enough...
 
@@ -63,11 +73,12 @@
 <form action="" method="post">
 
     <input type="password" id="password" placeholder="********************" class="box">
+    
     <img id="accesgranted" style="display: none;">
     <img id="accesdenied" style="display: none;">
 
 
-    <div class="box2">
+    <div class="box2" onclick="checkPassword()">
         <button class="button" type="button" onclick="checkPassword()">
             ENTER
         </button>
@@ -78,5 +89,6 @@
     </form>
 
 </body>
-<script src="assets/js/index.js"></script>
-</html>
+{% load static %}
+<script src="{% static 'main/assets/js/index.js' %}"></script>
+{% endblock %}

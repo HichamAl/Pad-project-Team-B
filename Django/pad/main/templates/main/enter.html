@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+{% extends 'main/base.html'%}
+
+{% block title %}
+Welcome to Dedsec
+{% endblock %}
+
+{% block head %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'main/assets/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<body>
+<img src="{% static 'main/assets/img/logo.svg' %}" alt="" class="center">
+
+<img src="{% static 'main/assets/img/dedsecjoinus.svg' %}" class="center">
+
+<div class="box3" onclick="redirectLogin()">
+        LOGIN
+
+
+
+    </div>
+<div class="box3" onclick="redirectRegister()">
+        REGISTER
+
+
+
+    </div>
+
+</body>
+{% load static %}
+<script src="{% static 'main/assets/js/index.js' %}"></script>
+{% endblock %}
