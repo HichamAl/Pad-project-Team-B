@@ -12,7 +12,7 @@ function checkPassword() {
     document.getElementById("accesdenied").src = "/static/main/assets/img/accesdenied.svg";
     document.getElementById("accesdenied").style.display = "block";
       setTimeout(function() {
-      window.location.href = "../index";
+      window.location.href = "../";
     }, 1500);
   }
 }

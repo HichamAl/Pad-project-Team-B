@@ -1,8 +1,13 @@
-
-<!DOCTYPE html>
 {% extends 'main/base.html'%}
 
-<!-- ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣶⠶⠶⠶⠶⠶⠶⠶⢖⣦⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    {% block title %}
+    Welcome
+    {% endblock %}
+
+    {% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/assets/css/index.css' %}">
+    <!-- ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣶⠶⠶⠶⠶⠶⠶⠶⢖⣦⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡴⠞⠛⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠻⠶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⠞⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⢶⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -33,11 +38,6 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠿⠿⠿⠿⠿⠿⠿⠿⠿⠟⠛⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 
-
-
-
-
-
 8 888888888o          .8.    8888888 8888888888 8888888 8888888888  8 8888 8 8888888888   8 888888888o       ,o888888o.  `8.`8888.      ,8' d888888o.
 8 8888    `88.       .888.         8 8888             8 8888        8 8888 8 8888         8 8888    `88.  . 8888     `88. `8.`8888.    ,8'.`8888:' `88.
 8 8888     `88      :88888.        8 8888             8 8888        8 8888 8 8888         8 8888     `88 ,8 8888       `8b `8.`8888.  ,8' 8.`8888.   Y8
@@ -48,46 +48,31 @@
 8 8888      88 .8'   `8. `88888.   8 8888             8 8888        8 8888 8 8888         8 8888      88 `8 8888       ,8P      8 8888   8b   `8.`8888.
 8 8888    ,88'.888888888. `88888.  8 8888             8 8888        8 8888 8 8888         8 8888    ,88'  ` 8888     ,88'       8 8888   `8b.  ;8.`8888
 8 888888888P .8'       `8. `88888. 8 8888             8 8888        8 8888 8 888888888888 8 888888888P       `8888888P'         8 8888    `Y8888P ,88P' -->
-
-
-    {% block title %}
-    Welcome
-    {% endblock %}
-
-    {% block head %}
-    {% load static %}
-    
-    <link rel="stylesheet" href="{% static 'main/assets/css/index.css' %}">
+ 
     {% endblock %}
 
 {% block content %}
 <body>
-    
 <img src="{% static 'main/assets/img/logo.svg' %}" alt="" class="center">
-    
 <img src="{% static 'main/assets/img/dedsecjoinus.svg' %}" class="center">
+
 <h1 class="center">
     So u taught u could get in so easily? Let’s check if you’re worthy enough...
-
 </h1>
-<form action="" method="post">
 
-    <input type="password" id="password" placeholder="********************" class="box">
+<form method="post" onsubmit="checkPassword(); return false;">
+{% csrf_token %}
+    <input type="password" id="password" placeholder="********************" class="box"> 
     
     <img id="accesgranted" style="display: none;">
     <img id="accesdenied" style="display: none;">
 
-
     <div class="box2" onclick="checkPassword()">
-        <button class="button" type="button" onclick="checkPassword()">
+        <button class="button" type="submit" onclick="checkPassword()">
             ENTER
         </button>
-
-
-
     </div>
-    </form>
-
+</form>
 </body>
 {% load static %}
 <script src="{% static 'main/assets/js/index.js' %}"></script>

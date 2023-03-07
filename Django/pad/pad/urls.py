@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from register import views as v
+from register.views import SignedOutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', v.register, name="register"),
+    path("signed-out/", SignedOutView.as_view(), name="sign-out"),
     path('', include("main.urls")),
     path('', include("django.contrib.auth.urls")),
 ]
