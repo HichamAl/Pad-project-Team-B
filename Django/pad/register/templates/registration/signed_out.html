@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+    {% block head %}
+    {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'register/signed_out.css' %}"/>
+        <title>Dedsec CTF</title>
+    {% endblock %}
+    {% block content %}
+        <h1>Logged out</h1>
+        <p>Thanky you for visiting!</p> <br>
+        <a href="/login">Log in again</a> <br> 
+        <img class="dedsec-logo" src="/static/images/signed_out.png" alt="dedsec-logo">
+    {% endblock %}

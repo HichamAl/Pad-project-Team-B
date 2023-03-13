@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Login Page
+{% endblock %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'register/login.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<button class="back"><a href="/enter">Back</a></button>
+<br>
+<h1>Login page</h1>
+<br>
+<form method="POST" class="form-group">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="btn btn-succes">Login</button>
+    <p>Don't have an account? register <a href="/register">here</a></p>
+</form>
+{% endblock %}
