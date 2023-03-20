@@ -9,10 +9,40 @@ Welcome to Dedsec
 {% block head %}
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'main/assets/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'main/assets/css/home.css' %}">
 {% endblock %}
 
 {% block content %}
+    <body>
+        <div class="header">
+            <nav>
+                <a href="/home"><img src="{% static 'main/assets/img/logo.svg' %}" class="logo"></a>
+                <ul class="nav-links">
+                    <li><a href="../home">Home</a></li>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="">Leaderboard</a></li>
+                    <li><a href="../credit">Credits</a></li>
+                    <li><a href="/signed-out">Logout</a></li>
+                    <li class="btn"><a href= "#play" style="background: none; color: black;" >Play</a></li>
+                    <li class="btn2">Profile</li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <div class="textbox">
+            <div class="child4">
+                <h2 id="introduction">CREDITS.</h2>
+                <p> <strong> Developers Team B </strong>  <br> Hicham, Mete, Dewan, Jerre.H, Bruno </p>
+                <p> <br> <strong> Dear users </strong>  <br> We would like to extend our sincere appreciation for your unwavering support and contributions to our website. It is your engagement and feedback that have propelled us forward and helped us to create a thriving online community. <br> <br> We understand that you have many options for how to spend your time online, and we are honored that you have chosen to invest your time with us. Your continued loyalty inspires us to work harder and innovate more, as we strive to provide you with an exceptional experience. <br> <br> We welcome your feedback and suggestions as we continue to improve our website and build a better future together. <br> <br> Thank you for being a part of our community. <br> <br> Sincerely, <br> Team B
+
+                </p>
+           
+        </div>
+
+    </body>
+    {% endblock %}
+
 
 <body>
 <img src="{% static 'main/assets/img/logo.svg' %}" alt="" class="center">
