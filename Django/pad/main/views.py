@@ -27,6 +27,10 @@ def index(request):
 def enter(response):
     return render(response, "main/enter.html")
 
+# credit view
+def credit(response):
+    return render(response, "main/credit.html")
+
 # challenge page view
 @login_required(login_url='/login/')
 def challenges(response):
