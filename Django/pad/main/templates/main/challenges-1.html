@@ -144,9 +144,10 @@ Challenge 1
 <br>
 <br>
 <div class="submitflagsection">
-    <form action="">
-        <input type="text" id="flagcodeinput" placeholder="dedsecCTF{flag}" class="inputbox">
-        <button class="inputbutton">
+    <form method="POST" >
+        {% csrf_token %}
+        <input type="text" id="flagcodeinput" placeholder="dedsecCTF{flag}" class="inputbox" name="flag">
+        <button type="submit" class="inputbutton">
             Sumbit flag
         </button>
 

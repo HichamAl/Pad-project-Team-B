@@ -1,6 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from .models import Challenge, UserPoints
+from django.db.models import Sum
 
 # Create your views here.
 
@@ -33,10 +36,46 @@ def credit(response):
 
 # challenge page view
 @login_required(login_url='/login/')
-def challenges(response):
-    return render(response, "main/challenges.html")
+def challenges(request):
+    user_points = UserPoints.objects.filter(user=request.user).values('user__username').annotate(total_points=Sum('points')).all()[0]
+    # SELECT *, SUM(points) AS total_points WHERE user.username=username GROUP BY user.username;
+    # dits voor leader board
+    # user_points = UserPoints.objects.values('user__username').annotate(total_points=Sum('points')).all()[:10]
+    print(user_points['total_points'])
+    # print(user_points.points)
+    return render(request, "main/challenges.html", {'user_points': user_points, 'total_points': user_points['total_points']})
 
-# challenge 1 view
+
+
+
+
+
+
+
+#points system
 @login_required(login_url='/login/')
-def challenges1(response):
-    return render(response, "main/challenges-1.html")
+def challenges1(request):
+    print('dddd')
+    if request.method == 'POST':
+        flag = request.POST.get('flag')
+        try:
+            challenge = Challenge.objects.get(flag=flag)
+
+            try:
+                up = UserPoints.objects.get(user=request.user, challenges__flag=flag)
+                messages.error(request, 'You have already submitted this flag.')
+            except UserPoints.DoesNotExist:
+                user_points = UserPoints.objects.create(user=request.user, points=challenge.points)
+                user_points.save()
+                messages.success(request, f'You earned {challenge.points} points for submitting the flag!')
+        except Challenge.DoesNotExist:
+            print("fout")
+        
+    return render(request, 'main/challenges-1.html')
+
+
+def leaderboard(request):
+    user_points_list = UserPoints.objects.annotate(total_points=models.Sum('challenges__points')).order_by('-total_points')
+    return render(request, 'main/leaderboard.html', {'user_points_list': user_points_list})
+
+
