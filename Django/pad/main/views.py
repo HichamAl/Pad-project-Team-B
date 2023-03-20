@@ -37,7 +37,10 @@ def credit(response):
 # challenge page view
 @login_required(login_url='/login/')
 def challenges(request):
-    user_points = UserPoints.objects.filter(user=request.user).values('user__username').annotate(total_points=Sum('points')).all()[0]
+    user_points = UserPoints.objects.filter(user=request.user).values('user__username').annotate(total_points=Sum('points')).all()
+    if len(user_points) == 0:
+        return render(request, "main/challenges.html", {'user_points': user_points, 'total_points': 0})
+    user_points = user_points[0]
     # SELECT *, SUM(points) AS total_points WHERE user.username=username GROUP BY user.username;
     # dits voor leader board
     # user_points = UserPoints.objects.values('user__username').annotate(total_points=Sum('points')).all()[:10]
@@ -60,12 +63,13 @@ def challenges1(request):
         flag = request.POST.get('flag')
         try:
             challenge = Challenge.objects.get(flag=flag)
-
+            print('c', challenge)
             try:
                 up = UserPoints.objects.get(user=request.user, challenges__flag=flag)
+                print('i', up)
                 messages.error(request, 'You have already submitted this flag.')
             except UserPoints.DoesNotExist:
-                user_points = UserPoints.objects.create(user=request.user, points=challenge.points)
+                user_points = UserPoints.objects.create(user=request.user, points=challenge.points, challenges=challenge)
                 user_points.save()
                 messages.success(request, f'You earned {challenge.points} points for submitting the flag!')
         except Challenge.DoesNotExist:

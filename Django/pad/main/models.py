@@ -9,7 +9,7 @@ class Challenge(models.Model):
 class UserPoints(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     points = models.IntegerField(default=0)
-    challenges = models.ManyToManyField(Challenge, blank=True)
+    challenges = models.ForeignKey(Challenge, on_delete=models.CASCADE)
 
     def total_points(self):
         return sum(challenge.points for challenge in self.challenges.all())
