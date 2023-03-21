@@ -85,8 +85,9 @@ def challenges1(request):
     return render(request, 'main/challenges-1.html')
 
 
+@login_required(login_url='/login/')
 def leaderboard(request):
-    user_points_list = UserPoints.objects.annotate(total_points=models.Sum('challenges__points')).order_by('-total_points')
-    return render(request, 'main/leaderboard.html', {'user_points_list': user_points_list})
+    user_points = UserPoints.objects.values('user__username').annotate(total_points=Sum('points')).order_by('-total_points')[:10]
+    return render(request, 'main/leaderboard.html', {'user_points': user_points})
 
 

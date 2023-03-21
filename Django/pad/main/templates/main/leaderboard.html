@@ -1,10 +1,88 @@
 {% extends 'main/base.html' %}
 
+{% block title %}
+    Welcome
+    {% endblock %}
+
+    {% block head %}
+{% load static %}
+
+    
+    <link rel="stylesheet" href="{% static 'main/assets/css/home.css' %}">
+{% endblock %}
+
 {% block content %}
-  <h1>Leaderboard</h1>
-  <ol>
-    {% for user_points in user_points_list %}
-      <li>{{ user_points.user.username }} - {{ user_points.total_points }}</li>
-    {% endfor %}
-  </ol>
+ <!--HEADER-->
+ <div class="header">
+  <nav>
+      <a href="/home"><img src="{% static 'main/assets/img/logo.svg' %}" class="logo"></a>
+      <ul class="nav-links">
+          <li><a href="../home">Home</a></li>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="../leaderboard">Leaderboard</a></li>
+          <li><a href="../credit">Credits</a></li>
+          <li><a href="/signed-out">Logout</a></li>
+          <li class="btn"><a href= "../challenges" style="background: none; color: black;" >Play</a></li>
+          <li class="btn2"><a href="../profile">Profile</a></li>
+      </ul>
+  </nav>
+</div>
+
+<!--/HEADER-->
+
+<div class="welcome">
+  <h1><span class="auto-input-leaderboard"></span></h1> 
+
+</div>
+<div class="linesvg">
+  <img src="{% static 'main/assets/img/seperator.svg' %}" alt="">
+  <br>
+  <br>
+  <br>
+  <br>
+
+</div>
+<div class="leaderboard">
+  
+  <div class="description">
+      
+  </div>
+      <table>
+          <thead>
+              <tr>
+                  <td></td>
+                  <td>
+                      User
+                  </td>
+                  <td>
+                      Points
+                  </td>
+                  
+              </tr>
+          </thead>
+          {% for user_point in user_points %}
+          <tbody>
+              <tr>
+                  <td>#{{ forloop.counter }}</td>
+                  <td><img src="{% static 'main/assets/img/profileimg.svg'%}"><p>{{ user_point.user__username }}</p></td>
+                  <td>{{ user_point.total_points }}</td>
+                  
+              </tr>
+              
+              
+              {% endfor %}
+          </tbody>
+      </table>
+  </div>
+</div>
+
+  {% load static %}
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed(".auto-input-leaderboard", {
+            strings: ["Dedsec Leaderboard."],
+            typeSpeed: 60,
+            
+        })
+    </script>
 {% endblock %}

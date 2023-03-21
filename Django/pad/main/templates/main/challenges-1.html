@@ -21,7 +21,7 @@ Challenge 1
             <ul class="nav-links">
                 <li><a href="../home">Home</a></li>
                 <li><a href="#introduction">Introduction</a></li>
-                <li><a href="">Leaderboard</a></li>
+                <li><a href="../leaderboard">Leaderboard</a></li>
                 <li><a href="../credit">Credits</a></li>
                 <li><a href="/signed-out">Logout</a></li>
                 <li class="btn"><a href= "../challenges" style="background: none; color: black;" >Play</a></li>
@@ -147,7 +147,7 @@ Challenge 1
 <div class="submitflagsection">
     <form method="POST" >
         {% csrf_token %}
-        <input type="text" id="flagcodeinput" placeholder="dedsecCTF{flag}" class="inputbox" name="flag">
+        <input type="text" id="flagcodeinput" placeholder="dedsecCTF{flag}" class="inputbox" name="flag" style="background: #131313">
         <button type="submit" class="inputbutton">
             Sumbit flag
         </button>

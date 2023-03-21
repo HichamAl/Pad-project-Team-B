@@ -9,5 +9,6 @@ path("enter/", views.enter, name="enter"),
 path("challenges/", views.challenges, name="challenges"),
 path("challenges-1/", views.challenges1, name="challenges-1"),
 path("credit/", views.credit, name="credit"),
+path("leaderboard/", views.leaderboard, name="leaderboard"),
 
 ]
