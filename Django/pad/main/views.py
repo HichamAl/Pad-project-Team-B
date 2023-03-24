@@ -17,23 +17,8 @@ def profile(request):
     return render(request, "main/profile.html", {'user_points': user_points, 'total_points': user_points['total_points']})
 
 # home page view
-@login_required(login_url='/login/')
 def home(response):
     return render(response, "main/home.html")
- 
-# index page/challenge view
-def index(request):
-    # if user has not seen index is redirected to index.html 
-    # else redirected to the enterpage 
-    if 'has_seen_index' not in request.session:
-        request.session['has_seen_index']= True
-        return render (request, 'main/index.html')
-    else:
-        return redirect("/enter/")
-
-# enter view
-def enter(response):
-    return render(response, "main/enter.html")
 
 # credit view
 @login_required(login_url='/login/')
@@ -53,13 +38,6 @@ def challenges(request):
     print(user_points['total_points'])
     # print(user_points.points)
     return render(request, "main/challenges.html", {'user_points': user_points, 'total_points': user_points['total_points']})
-
-
-
-
-
-
-
 
 #points system
 @login_required(login_url='/login/')

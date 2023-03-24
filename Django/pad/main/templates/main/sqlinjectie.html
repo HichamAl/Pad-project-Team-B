@@ -1,16 +1,9 @@
-{% extends 'main/base.html' %}
-
-{% block title %}
-Login Page
-{% endblock %}
-
-{% block head %}
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'register/login.css' %}"/>
-{% endblock %}
-
-{% block content %}
-{% if user.is_authenticated %}
+<html>
+    <head>
+        <title>Inject the battie</title>
+    </head>
+    <body>
+        {% if user.is_authenticated %}
     <div class="header">
         <nav>
             <a href="/home"><img src="{% static 'main/assets/img/logo.svg' %}" class="logo"></a>
@@ -40,13 +33,15 @@ Login Page
         </nav>
     </div>
     {% endif %}
-<br>
-<h1>Login page</h1>
-<br>
-<form method="POST" class="form-group">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit" class="btn btn-succes">Login</button>
-    <p>Don't have an account? register <a href="/register">here</a></p>
-</form>
-{% endblock %}
+        <br>
+        <br>
+        <br>
+        <form action="">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="John"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <input type="submit" value="Submit">
+          </form> 
+    </body>
+</html>

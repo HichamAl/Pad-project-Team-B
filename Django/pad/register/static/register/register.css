@@ -1,7 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+  box-sizing: border-box;
+  
+  
+}
+
 body {
-    font-family: "poppins", sans-serif;
-    background: #181818;
-    color: white;
+  background: #181818;
+  color: white;
 }
 
 h1 {
@@ -56,4 +64,76 @@ form {
 }
   
   
-  
+  /*
+BEGIN HEADER*/
+.header{
+    height: 20vh;
+    width: 100%;
+    padding: 0 8%;
+    position: relative;
+    
+
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 140px;
+}
+
+.nav-links{
+    padding: 28px 0;
+}
+
+.nav-links li{
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 5px 0 ;
+    position: relative;
+}
+
+.nav-links li a::after{
+    content: '';
+    background: #ffffff;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.nav-links li a:hover::after{
+    width: 100%;
+}
+
+.btn{
+    background: #ffffff;
+    border: 3px solid #ffffff;
+    color: black;
+    padding: 10px 30px;
+    border-radius: 58px;
+    cursor: pointer;
+}
+
+.btn2{
+    background: none;
+    border: 3px solid #ffffff;
+    
+    color: #ffffff;
+    padding: 10px 30px;
+    border-radius: 58px;
+    cursor: pointer;
+}
+
+/*
+EIND HEADER*/

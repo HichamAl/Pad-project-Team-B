@@ -5,8 +5,35 @@
         <title>Dedsec CTF</title>
     {% endblock %}
     {% block content %}
-        <h1>Logged out</h1>
-        <p>Thanky you for visiting!</p> <br>
-        <a href="/login">Log in again</a> <br> 
-        <img class="dedsec-logo" src="/static/images/signed_out.png" alt="dedsec-logo">
+    {% if user.is_authenticated %}
+    <div class="header">
+        <nav>
+            <a href="/home"><img src="{% static 'main/assets/img/logo.svg' %}" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="../home">Home</a></li>
+                <li><a href="../leaderboard">Leaderboard</a></li>
+                <li><a href="../credit">Credits</a></li>
+                <li><a href="/signed-out">Logout</a></li>
+                <li class="btn"><a href= "../challenges" style="background: none; color: black;" >Play</a></li>
+                <li class="btn2"><a href="../profile">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+    {% else %}
+    <div class="header">
+        <nav>
+            <a href="/home"><img src="{% static 'main/assets/img/logo.svg' %}" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="../home">Home</a></li>
+                <li><a href="../leaderboard">Leaderboard</a></li>
+                <li><a href="../credit">Credits</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                <li class="btn"><a href= "../challenges" style="background: none; color: black;" >Play</a></li>
+                <li class="btn2"><a href="../profile">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
+        <h1>You are logged out, Thanky you for visiting!</h1>
     {% endblock %}
