@@ -1,5 +1,5 @@
 {% extends 'main/base.html' %}
-
+{% load avatar_tags %}
 {% block title %}
 Profile 
 {% endblock %}
@@ -28,10 +28,13 @@ Profile
 <p>Your points: {{ total_points }}</p>
 <p>Your rank: #1337</p>
 <p>Profile info</p> <br>
+{% avatar user %}
+
 <p>Username: {{ user.get_username }} </p> <br>
 <p>Email: {{ user.email }}</p> <br>
 <p>Password: {{ user.password }}</p> <br>
 <p>Change password: work in progress</p>
+<a href="{% url 'avatar_change' %}">Change your avatar</a>
 </div>
 {% endblock %}
 

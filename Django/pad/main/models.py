@@ -15,3 +15,4 @@ class UserPoints(models.Model):
         return sum(challenge.points for challenge in self.challenges.all())
 
 
+
