@@ -2,8 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Challenge, UserPoints
+from .models import Challenge, UserPoints, SecretUser
 from django.db.models import Sum
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.db import connection
+
 
 # Create your views here.
 
@@ -68,4 +72,28 @@ def leaderboard(request):
     user_points = UserPoints.objects.values('user__username').annotate(total_points=Sum('points')).order_by('-total_points')[:10]
     return render(request, 'main/leaderboard.html', {'user_points': user_points})
 
+# SQL INJECTIE CTF
+def sql(request):
+    if request.method == 'POST':
+        # Get the form data from the POST request
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        # Execute the SQL query
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM main_secretuser WHERE secret_username = '" + username + "' AND secret_password = '" + password + "'")
+            row = cursor.fetchone()
+
+        # Authenticate the user's credentials
+        if row is not None:
+            secret_user = SecretUser(id=row[0], secret_username=row[1], secret_password=row[2])
+            # Credentials are valid, display a message succesfully logged in and show the flag
+            messages.success(request, 'Welcome admin tot the secret server, here is your flag: dedsecCTF{inject_the_battie}')
+            return render(request, 'main/sql.html')
+        else:
+            # Credentials are invalid, display message unsuccesfully logged in try again
+            messages.error(request, 'Incorrect username or password. Please try again.')
+            return render(request, 'main/sql.html')
+    else:        
+        return render(request, 'main/sql.html')
 

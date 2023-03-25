@@ -7,6 +7,22 @@
     
 }
 
+/* sql ctf css */
+.sql label {
+    color: white;
+}
+
+.sql input {
+    color: #000000;
+}
+.sqlbutton {
+    background: #ffffff;
+    border: 3px solid #ffffff;
+    color: black;
+    padding: 10px 30px;
+    border-radius: 58px;
+    cursor: pointer;
+}
 body {
     background: #181818;
 }

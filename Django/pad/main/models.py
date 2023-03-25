@@ -15,4 +15,8 @@ class UserPoints(models.Model):
         return sum(challenge.points for challenge in self.challenges.all())
 
 
+# SQL INJECTIE SECRET USER 
+class SecretUser(models.Model):
+    secret_username = models.CharField(max_length=100)
+    secret_password = models.CharField(max_length=100)
 

@@ -1,7 +1,11 @@
+{% extends 'main/base.html'%}
 <html>
-    <head>
-        <title>Inject the battie</title>
-    </head>
+    {% block head %}
+{% load static %}
+<title>Inject the battie</title>
+<link rel="stylesheet" href="{% static 'main/assets/css/home.css' %}">
+{% endblock %}
+{% block content %}
     <body>
         {% if user.is_authenticated %}
     <div class="header">
@@ -36,12 +40,28 @@
         <br>
         <br>
         <br>
-        <form action="">
-            <label for="fname">First name:</label><br>
-            <input type="text" id="fname" name="fname" value="John"><br>
-            <label for="lname">Last name:</label><br>
-            <input type="text" id="lname" name="lname" value="Doe"><br><br>
-            <input type="submit" value="Submit">
+
+        <h2 class="sql">SQL INJECTION, THERE IS A FLAG TO BE FOUND IF YOU MANAGE TO BYPASS THIS FORM.. GOOD LUCK!</h2>
+        <br> 
+        <br>
+        <br>
+        
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+
+        <form class="sql" method="post">
+            {% csrf_token %}
+            <label>Username:</label><br>
+            <input type="text" name="username"><br>
+            <label>Password:</label><br>
+            <input type="password" name="password"><br><br>
+            <input class="sqlbutton" type="submit">
           </form> 
     </body>
+    {% endblock %}
 </html>
