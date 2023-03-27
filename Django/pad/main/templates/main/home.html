@@ -19,9 +19,9 @@ Home of DedSec
     {% if user.is_authenticated %}
     <div class="header">
         <nav>
-            <a href="/home"><img src="{% static 'main/assets/img/logo.svg' %}" class="logo"></a>
+            <a href="/"><img src="{% static 'main/assets/img/logo.svg' %}" class="logo"></a>
             <ul class="nav-links">
-                <li><a href="../home">Home</a></li>
+                <li><a href="../">Home</a></li>
                 <li><a href="../leaderboard">Leaderboard</a></li>
                 <li><a href="../credit">Credits</a></li>
                 <li><a href="/signed-out">Logout</a></li>
@@ -33,9 +33,9 @@ Home of DedSec
     {% else %}
     <div class="header">
         <nav>
-            <a href="/home"><img src="{% static 'main/assets/img/logo.svg' %}" class="logo"></a>
+            <a href="/"><img src="{% static 'main/assets/img/logo.svg' %}" class="logo"></a>
             <ul class="nav-links">
-                <li><a href="../home">Home</a></li>
+                <li><a href="../">Home</a></li>
                 <li><a href="../leaderboard">Leaderboard</a></li>
                 <li><a href="../credit">Credits</a></li>
                 <li><a href="/login">Login</a></li>
