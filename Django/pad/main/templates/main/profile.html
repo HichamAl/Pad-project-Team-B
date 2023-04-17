@@ -40,17 +40,17 @@ Profile
 {% endif %}
 
 <div class="profile-info">
-<h1> Hello {{ user.get_username }}</h1> <br> <br> 
-<p>Your points: {{ total_points }}</p>
-<p>Your rank: #1337</p>
-<p>Profile info</p> <br>
-{% avatar user %}
-
-<p>Username: {{ user.get_username }} </p> <br>
-<p>Email: {{ user.email }}</p> <br>
-<p>Password: {{ user.password }}</p> <br>
-<p>Change password: work in progress</p>
-<a href="{% url 'avatar_change' %}">Change your avatar</a>
-</div>
+    <h1>Profile info</h1> <br> <br> 
+    <p>Username: {{ user.get_username }} </p>
+    <p>Email: {{ user.email }}</p> <br>
+    <p>Total points: {{ total_points }}</p>
+    <p>Rank: #1337</p>
+    <br>
+    <div class="avatar">
+      {% avatar user %}
+    </div>
+    <a href="../password_change">Change password</a>
+    <a href="{% url 'avatar_change' %}">Change your avatar</a>
+  </div>
 {% endblock %}
 
