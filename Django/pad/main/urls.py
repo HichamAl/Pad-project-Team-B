@@ -12,7 +12,8 @@ path("challenges/", views.challenges, name="challenges"),
 path("challenges-1/", views.challenges1, name="challenges-1"),
 path("credit/", views.credit, name="credit"),
 path("leaderboard/", views.leaderboard, name="leaderboard"),
-path('avatar/', include('avatar.urls'))
+path('avatar/', include('avatar.urls')),
+path("challenges-2/", views.challenges2, name="challenges-2"),
 ] 
 
 if settings.DEBUG:
