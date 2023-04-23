@@ -7,3 +7,8 @@ function redirect2() {
     window.location.href = "../challenges-2";
   
 }
+
+function redirect3() {
+    window.location.href = "../challenges-3";
+  
+}

@@ -14,6 +14,7 @@ path("credit/", views.credit, name="credit"),
 path("leaderboard/", views.leaderboard, name="leaderboard"),
 path('avatar/', include('avatar.urls')),
 path("challenges-2/", views.challenges2, name="challenges-2"),
+path("challenges-3/", views.challenges3, name="challenges-3"),
 ] 
 
 if settings.DEBUG:
