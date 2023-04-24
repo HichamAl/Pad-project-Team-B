@@ -4,6 +4,7 @@ from .forms import RegisterForm
 from django.views.generic.base import TemplateView
 from django.http import HttpRequest
 from django.contrib.auth import logout
+from django.contrib import messages
 
 # register view 
 def register(response):
@@ -11,6 +12,7 @@ def register(response):
         form = RegisterForm(response.POST)
         if form.is_valid():
             form.save()
+            messages.success(response, 'Your account has been successfully created!')
             return redirect("/login")
     else:
         form = RegisterForm

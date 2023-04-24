@@ -11,14 +11,14 @@ from django.db import connection
 
 # Create your views here.
 
-# work in progress
 @login_required(login_url='/login/')
 def profile(request):
-    user_points = UserPoints.objects.filter(user=request.user).values('user__username').annotate(total_points=Sum('points')).all()
-    if len(user_points) == 0:
-        return render(request, "main/profile.html", {'user_points': user_points, 'total_points': 0})
-    user_points = user_points[0]
-    return render(request, "main/profile.html", {'user_points': user_points, 'total_points': user_points['total_points']})
+    user_points = UserPoints.objects.filter(user=request.user).values('user__username').annotate(total_points=Sum('points')).order_by('-total_points').first()
+    if user_points is None:
+        return render(request, "main/profile.html", {'user_points': None, 'total_points': 0, 'rank': None})
+    leaderboard = UserPoints.objects.values('user__username').annotate(total_points=Sum('points')).order_by('-total_points')
+    rank = list(leaderboard).index(user_points) + 1
+    return render(request, "main/profile.html", {'user_points': user_points, 'total_points': user_points['total_points'], 'rank': rank})
 
 # home page view
 def home(response):
@@ -116,6 +116,8 @@ def challenges3(request):
 def leaderboard(request):
     user_points = UserPoints.objects.values('user__username').annotate(total_points=Sum('points')).order_by('-total_points')[:10]
     return render(request, 'main/leaderboard.html', {'user_points': user_points})
+
+
 
 # SQL INJECTIE CTF
 def sql(request):
