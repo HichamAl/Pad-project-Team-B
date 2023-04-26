@@ -1,6 +1,18 @@
 # Team B
 
+## Clone Git
 
+```
+git clone https://gitlab.fdmci.hva.nl/pad-cs/2022-2023/ic101/team-b.git branch-name
+cd branch-name
+```
+## Python Enviroment
+
+```
+python3 -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+```
 
 ## Getting started
 
