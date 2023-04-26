@@ -5,6 +5,7 @@
 ```
 git clone https://gitlab.fdmci.hva.nl/pad-cs/2022-2023/ic101/team-b.git branch-name
 cd branch-name
+git checkout branch-name
 ```
 ## Python Enviroment
 
