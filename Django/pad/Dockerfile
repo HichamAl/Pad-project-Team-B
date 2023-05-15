@@ -1,31 +1,22 @@
-# Base image
-FROM python:3.9
+# base image 
+FROM python:3.8-buster
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+# setup environment variable  
+ENV PYTHONBUFFERED=1 
 
-# Install dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    python3-dev \
-    libpq-dev \
-    postgresql-client
+# where your code lives  
+WORKDIR /challenge
 
-# Set work directory
-WORKDIR /pad
-
-# Copy requirements
+# copy whole project to your docker home directory. 
 COPY requirements.txt requirements.txt
 
-# Install requirements
-RUN pip install -r requirements.txt
+# run this command to install all dependencies  
+RUN pip install -r requirements.txt  
 
-# Copy project
 COPY . .
 
-#Start Server
-CMD python manage.py runserver
+# start server  
+CMD python manage.py runserver 
 
-# django app port
-EXPOSE 8000
+# port where the Django app runs  
+EXPOSE 8080  
