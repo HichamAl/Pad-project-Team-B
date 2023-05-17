@@ -19,4 +19,4 @@ COPY . .
 CMD python manage.py runserver 
 
 # port where the Django app runs  
-EXPOSE 8080  
+EXPOSE 8000 
