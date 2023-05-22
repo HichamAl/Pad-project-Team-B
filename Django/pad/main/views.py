@@ -111,6 +111,28 @@ def challenges3(request):
         
     return render(request, 'main/challenges-3.html')
 
+@login_required(login_url='/login/')
+def challenges4(request):
+    if request.method == 'POST':
+        flag = request.POST.get('flag')
+        try:
+            challenge = Challenge.objects.get(flag=flag)
+            print('c', challenge)
+            try:
+                up = UserPoints.objects.get(user=request.user, challenges__flag=flag)
+                print('i', up)
+                messages.error(request, 'You have already submitted this flag.')
+                
+            except UserPoints.DoesNotExist:
+                user_points = UserPoints.objects.create(user=request.user, points=challenge.points, challenges=challenge)
+                user_points.save()
+                messages.success(request, f'You earned {challenge.points} points for submitting the flag!')
+                
+        except Challenge.DoesNotExist:
+            messages.error(request, 'Wrong flag code.')
+        
+    return render(request, 'main/challenges-4.html')
+
 
 @login_required(login_url='/login/')
 def leaderboard(request):

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+{% extends 'main/base.html'%}
+
+{% block title %}
+Challenge 4
+{% endblock %}
+
+{% block head %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'main/assets/css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<body>
+    {% include 'main/messages.html' %}
+    {% if user.is_authenticated %}
+    <div class="header">
+        <nav>
+            <a href="/"><img src="{% static 'main/assets/img/logo.svg' %}" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../leaderboard">Leaderboard</a></li>
+                <li><a href="../credit">Credits</a></li>
+                <li><a href="/signed-out">Logout</a></li>
+                <li class="btn"><a href= "../challenges" style="background: none; color: black;" >Play</a></li>
+                <li class="btn2"><a href="../profile">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+    {% else %}
+    <div class="header">
+        <nav>
+            <a href="/"><img src="{% static 'main/assets/img/logo.svg' %}" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="../">Home</a></li>
+                <li><a href="../leaderboard">Leaderboard</a></li>
+                <li><a href="../credit">Credits</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                <li class="btn"><a href= "../challenges" style="background: none; color: black;" >Play</a></li>
+                <li class="btn2"><a href="../profile">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
+
+
+<!--/HEADER-->
+
+<div class="welcome">
+    <h1><span class="auto-input2"></span></h1>
+   <div class="amountpoints">
+    <div>
+    <img src="{% static 'main/assets/img/profileimg.svg'%}" alt="">
+</div>
+<div>
+    <p>
+        | 10 Points
+    </p>
+</div>
+   </div>
+    
+
+</div>
+<div class="linesvg">
+    <img src="{% static 'main/assets/img/seperator.svg'%}" alt="">
+    <br>
+    <br>
+    <br>
+    <br>
+
+</div>
+
+<div class="container">
+    <div class="textbox">
+        <h1>
+            Description
+        </h1>
+        <p>
+           Brute Force Your Way Trough The Login Page
+        </p>
+
+    </div>
+    
+    <h1>
+        Hints
+    </h1>
+    <div class="hints">
+        
+        
+        <div class="hintboxes" id="hint1" >
+            1
+        </div>
+       
+        <div class="hintboxes" id="hint2" >
+            2
+        </div>
+        <div class="hintboxes" id="hint3">
+            3
+        </div>
+        
+
+        
+    </div>
+    
+</div>
+<p class="hinttext" id="text1" style="display: none">Hint 1: <br>Coming Soon</p>
+<p class="hinttext" id="text2" style="display: none">Hint 2: <br>Coming Soon</p>
+<p class="hinttext" id="text3" style="display: none">Hint 3: <br>Coming Soon</p>
+
+<script>
+  var box1 = document.getElementById("hint1");
+  var box2 = document.getElementById("hint2");
+  var box3 = document.getElementById("hint3");
+  
+  var text1 = document.getElementById("text1");
+  var text2 = document.getElementById("text2");
+  var text3 = document.getElementById("text3");
+  
+  box1.addEventListener("click", function() {
+    text2.style.display = "none";
+    text3.style.display = "none";
+    text1.style.display = "block";
+  });
+  
+  box2.addEventListener("click", function() {
+    text1.style.display = "none";
+    text3.style.display = "none";
+    text2.style.display = "block";
+  });
+  
+  box3.addEventListener("click", function() {
+    text1.style.display = "none";
+    text2.style.display = "none";
+    text3.style.display = "block";
+  });
+  
+
+  box1.addEventListener("click", function(event) {
+    event.stopPropagation();
+  });
+  
+  box2.addEventListener("click", function(event) {
+    event.stopPropagation();
+  });
+  
+  box3.addEventListener("click", function(event) {
+    event.stopPropagation();
+  });
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="submitflagsection">
+    <form method="POST" >
+        {% csrf_token %}
+        <input type="text" id="flagcodeinput" placeholder="dedsecCTF{flag}" class="inputbox" name="flag" style="background: #131313">
+        <button type="submit" class="inputbutton">
+            Sumbit flag
+        </button>
+
+    </form>
+
+</div>
+
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var typed = new Typed(".auto-input2", {
+        strings: ["BRUTE FORCE."],
+        typeSpeed: 60,
+        
+    })
+</script>
+</body>
+</html>
+{% endblock %}
