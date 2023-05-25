@@ -1,9 +1,6 @@
 # base image 
 FROM python:3.8-buster
 
-# setup environment variable  
-ENV PYTHONBUFFERED=1 
-
 # where your code lives  
 WORKDIR /website
 
