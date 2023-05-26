@@ -1,12 +1,6 @@
 # base image 
 FROM python:3.8-buster
 
-# setup environment variable  
-ENV PYTHONBUFFERED=1 
-
-# where your code lives  
-WORKDIR /challenge
-
 # copy whole project to your docker home directory. 
 COPY requirements.txt requirements.txt
 

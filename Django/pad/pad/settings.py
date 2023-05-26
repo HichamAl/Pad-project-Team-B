@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+SESSION_COOKIE_NAME = 'main_website_session'
 # Application definition
 
 INSTALLED_APPS = [

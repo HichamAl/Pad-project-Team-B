@@ -2,10 +2,6 @@ version: '3.8'
 services:
   app:
     build: .
-    volumes:
-     - .:/pad
     ports:
      - 8000:8000
-    image: website:pad
-    container_name: padwebsite
     command: python manage.py runserver 0.0.0.0:8000
