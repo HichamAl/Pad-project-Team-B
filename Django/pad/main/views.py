@@ -66,7 +66,7 @@ def challenges1(request):
         
     return render(request, 'main/challenges-1.html')
 
-
+#Copy this whole function to create a new challenge page.
 @login_required(login_url='/login/')
 def challenges2(request):
     if request.method == 'POST':
@@ -89,6 +89,7 @@ def challenges2(request):
         
     return render(request, 'main/challenges-2.html')
 
+#Copy this whole function to create a new challenge page.
 @login_required(login_url='/login/')
 def challenges3(request):
     if request.method == 'POST':
@@ -111,6 +112,7 @@ def challenges3(request):
         
     return render(request, 'main/challenges-3.html')
 
+#Copy this whole function to create a new challenge page.
 @login_required(login_url='/login/')
 def challenges4(request):
     if request.method == 'POST':
@@ -134,6 +136,7 @@ def challenges4(request):
     return render(request, 'main/challenges-4.html')
 
 
+#Leaderboard function. Queries the Userpoints db and out of the Usernames takes the points.Orders the users by Many to less. and will only show 10
 @login_required(login_url='/login/')
 def leaderboard(request):
     user_points = UserPoints.objects.values('user__username').annotate(total_points=Sum('points')).order_by('-total_points')[:10]
