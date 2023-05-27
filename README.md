@@ -9,46 +9,71 @@ There are four challenges playable on the CTF website. They are all playable loc
 Challenges in docker: Sqlinjection, webexploit en bruteforce. 
 Challenge not in docker but on the website: decode challenge.
 
-# Local deployment
-To test locally, deploy or play challenges with docker.
-
 ## Requirements: docker en build tools
-Docker en docker-compose
+Docker and docker-compose
 
 ## Installation
 To play the challenges and run the website you need docker. Here is a link to the official page of docker with a step by step tutorial on how to install docker: https://docs.docker.com/engine/install/.
 
 ## Running/starting the project with docker
+
+### Follow the following steps to get the main website in docker:
 1. clone this git repository. (use: VSCODE)
-<img width="250" alt="Screenshot 2023-04-24 at 19 27 04" src="https://user-images.githubusercontent.com/104017860/234071833-9a977189-7a73-4cfd-9f5b-221495156f38.png">
 
-click on code then on HTTPS, and copy the address.
-<img width="250" alt="Screenshot 2023-04-24 at 19 28 42" src="https://user-images.githubusercontent.com/104017860/234072120-5f28983d-7b6d-4241-9f24-c072fd3137e8.png">
+2. click on code then on HTTPS, and copy the address.
 
-Go to VSCODE paste the address in the bar that appears after you select clone this repository and click enter. 
-<img width="250" alt="Screenshot 2023-04-24 at 19 31 15" src="https://user-images.githubusercontent.com/104017860/234072630-d09b690e-071e-41fb-a2f9-9205dcaf68e5.png">
+3. Go to VSCODE paste the address in the bar that appears after you select clone this repository and click enter. 
 
-next you need to select a location to clone the repository to, navigate to Desktop.
-click new folder, and give the new folder a name.
-then click select as repository destination.
-<img width="250" alt="Screenshot 2023-04-24 at 19 33 33" src="https://user-images.githubusercontent.com/104017860/234073460-241e1329-deb9-44fe-ab26-84a39d83e871.png">
+4. next you need to select a location to clone the repository to, navigate to Desktop. Click new folder, and give the new folder a name. Then click select as repository destination.
 
-next you will get a notifaction, click on open.
+5. next you will get a notifaction, click on open.
 
-<img width="250" alt="Screenshot 2023-04-24 at 19 38 51" src="https://user-images.githubusercontent.com/104017860/234074173-96c8ae0c-d42a-4861-9240-0e339508e0f6.png">
+6. after you opened the repository you need to open up a terminal (it can take sometime before you can do this).
 
+7. type the following command in the terminal: cd Django 
 
+8. type the following command in the terminal: cd pad
 
-2. after you opened the repository you need to open up a terminal (it can take sometime before you can do this).
-<img width="250" alt="Screenshot 2023-04-24 at 19 40 30" src="https://user-images.githubusercontent.com/104017860/234074450-be2934b6-090f-47ec-8cc4-8003a48699d9.png">
+9. then type the following command in the terminal: docker-compose build (this can take some time)
 
+10. then type the following command in the terminal: docker-compose up
 
-3. type the following command in the terminal: .....(moet nog verder doen)
+Now if you navigate to docker desktop you should see a container this is the container where the main website is located. 
 
-## Starting/running without docker
+You can navigate to localhost:8000 on your preffered browser to visit the website as long as the container is running. 
+
+To clone the challenges you need to clone the other 3 branches.
+
+### Follow the following steps to get the challenges in docker:
+
+Brute_force challenge
+1. Type the following command in the same terminal: git checkout brute_force 
+2. Now open a new terminal and type the following commands: docker-compose build
+3. And type the following command: docker-compose up
+
+Now if you navigate to docker desktop you should see a container this is the container where the brute force challenge is located.
+You can navigate to localhost:4000 to visit the challenge.
+
+Webexploit challenge
+1. type the following command in the same terminal: git checkout challenge2
+2. Now open a new terminal and type the following commands: cd webexploit
+3. Now type the following command: docker-compose build
+4. And type the following command: docker-compose up
+
+Now if you navigate to docker desktop you should see a container this is the container where the webexploit challenge is located.
+You can navigate to localhost:8002 to visit the challenge.
+
+Sqlinjection challenge
+1. type the following command in the same terminal: git checkout sqlinjection_challenge
+2. Now open a new terminal and type the following commands: cd sql
+3. Now type the following command: docker-compose build
+4. And type the following command: docker-compose up
+
+Now if you navigate to docker desktop you should see a container this is the container where the sqlinjection challenge is located.
+You can navigate to localhost:8001 to visit the challenge.
 
 ## Authors
-Mete Basoda
+Mete Basoda 
 Bruno Blaauboer
 Jerre Hilgeman
 Hicham Almakroudi
