@@ -18,5 +18,6 @@ path("challenges-4/", views.challenges4, name="challenges-4"),
 path("combinations/", views.combinations, name="combinations"),
 ] 
 
+#Allows profile pictures to be uploaded
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
