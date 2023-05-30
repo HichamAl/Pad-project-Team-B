@@ -30,13 +30,13 @@ To play the challenges and run the website you need docker. Here is a link to th
 
 6. after you opened the repository you need to open up a terminal (it can take sometime before you can do this).
 
-7. type the following command in the terminal: cd Django 
+7. type the following command in the terminal: ```cd Django ```
 
-8. type the following command in the terminal: cd pad
+8. type the following command in the terminal: ```cd pad```
 
-9. then type the following command in the terminal: docker-compose build (this can take some time)
+9. then type the following command in the terminal: ```docker-compose build``` (this can take some time)
 
-10. then type the following command in the terminal: docker-compose up
+10. then type the following command in the terminal: ```docker-compose up```
 
 Now if you navigate to docker desktop you should see a container this is the container where the main website is located. 
 
@@ -47,27 +47,27 @@ To clone the challenges you need to clone the other 3 branches.
 ### Follow the following steps to get the challenges in docker:
 
 Brute_force challenge
-1. Type the following command in the same terminal: git checkout brute_force 
-2. Now open a new terminal and type the following commands: docker-compose build
-3. And type the following command: docker-compose up
+1. Type the following command in the same terminal: ```git checkout brute_force ```
+2. Now open a new terminal and type the following commands: ```docker-compose build```
+3. And type the following command: ```docker-compose up```
 
 Now if you navigate to docker desktop you should see a container this is the container where the brute force challenge is located.
 You can navigate to localhost:4000 to visit the challenge.
 
 Webexploit challenge
-1. type the following command in the same terminal: git checkout challenge2
-2. Now open a new terminal and type the following commands: cd webexploit
-3. Now type the following command: docker-compose build
-4. And type the following command: docker-compose up
+1. type the following command in the same terminal: ```git checkout challenge2```
+2. Now open a new terminal and type the following commands: ```cd webexploit```
+3. Now type the following command: ```docker-compose build```
+4. And type the following command: ```docker-compose up```
 
 Now if you navigate to docker desktop you should see a container this is the container where the webexploit challenge is located.
 You can navigate to localhost:8002 to visit the challenge.
 
 Sqlinjection challenge
-1. type the following command in the same terminal: git checkout sqlinjection_challenge
-2. Now open a new terminal and type the following commands: cd sql
-3. Now type the following command: docker-compose build
-4. And type the following command: docker-compose up
+1. type the following command in the same terminal: ```git checkout sqlinjection_challenge```
+2. Now open a new terminal and type the following commands: ```cd sql```
+3. Now type the following command: ```docker-compose build```
+4. And type the following command: ```docker-compose up```
 
 Now if you navigate to docker desktop you should see a container this is the container where the sqlinjection challenge is located.
 You can navigate to localhost:8001 to visit the challenge.
