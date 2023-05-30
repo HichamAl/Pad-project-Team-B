@@ -144,4 +144,6 @@ def leaderboard(request):
     return render(request, 'main/leaderboard.html', {'user_points': user_points})
 
 
-
+@login_required(login_url='/login/')
+def combinations(response):
+    return render(response, "main/combinations.txt")

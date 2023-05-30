@@ -57,7 +57,7 @@ Challenge 4
 </div>
 <div>
     <p>
-        | 10 Points
+        | 15 Points
     </p>
 </div>
    </div>
@@ -79,7 +79,8 @@ Challenge 4
             Description
         </h1>
         <p>
-           Brute Force Your Way Trough The Login Page here .. <a target="_blank" href="http://localhost:4000">here</a>
+           Brute Force Your Way Trough The Login Page here .. <a target="_blank" href="http://127.0.0.1:4000">here</a>
+           the possible combinations are in this <a href="{% url 'combinations' %}" download="combinations.txt">txt file   </a>
         </p>
 
     </div>
@@ -106,9 +107,9 @@ Challenge 4
     </div>
     
 </div>
-<p class="hinttext" id="text1" style="display: none">Hint 1: <br>Coming Soon</p>
-<p class="hinttext" id="text2" style="display: none">Hint 2: <br>Coming Soon</p>
-<p class="hinttext" id="text3" style="display: none">Hint 3: <br>Coming Soon</p>
+<p class="hinttext" id="text1" style="display: none">Hint 1: <br>Use an Bruteforcing tool like Silverbullet <a href="https://bunkr.la/d/SilverBullet.v1.1.3-ZGbzSx15.7z">HERE</a></p>
+<p class="hinttext" id="text2" style="display: none">Hint 2: <br>Use Silverbullet to make an config to bruteforce. Tutorials are available online.</p>
+<p class="hinttext" id="text3" style="display: none">Hint 3: <br>When making the config add a REQUEST block and a KEY CHECK block <br> in the REQUEST block use the URL 127.0.0.1:4000/login <br> and the method as POST <br>You can get the POST data by going to the website itself and logging in and checking at the Network traffic using developer tools at the Payload<br> Look up tutorials to find simple configs that are made with Openbullet/Silverbullet </p>
 
 <script>
   var box1 = document.getElementById("hint1");
