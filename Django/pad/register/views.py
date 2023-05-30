@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm
 from django.views.generic.base import TemplateView
 from django.http import HttpRequest
